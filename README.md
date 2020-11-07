@@ -1,0 +1,1 @@
+# データベースをDockerでfixtureするpytest環境例
