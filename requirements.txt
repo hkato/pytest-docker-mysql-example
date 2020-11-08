@@ -1,5 +1,9 @@
 # Runtime
+SQLAlchemy==1.3.20
+# MySQL
 PyMySQL==0.10.1
+# PostgreSQL
+psycopg2-binary==2.8.6
 
 # Testing
 attrs==20.3.0
