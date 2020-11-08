@@ -88,13 +88,24 @@ def database_service(docker_ip, docker_services):
 
 #### 実行結果
 
-初期設定
+Python環境の初期設定
 
 ```sh
 $ # 実際の運用ではテスト環境と実行環境のためPipenvとかPoetryを使うのが良いかも
 $ python -m venv .venv
 $ source .venv/bin/activate
 $ pip install -r requirements.txt
+```
+
+環境変数設定
+
+```sh
+$ cat << 'EOF' > .env
+MYSQL_ROOT_PASSWORD='p@ssw0rd'
+MYSQL_DATABASE='mydb'
+MYSQL_USER='foo'
+MYSQL_PASSWORD='pa$$Word'
+EOF
 ```
 
 テスト実行するとFixtureでDockerコンテナーを起動し、そのコンテナー内のdocker-entrypoint-initdb.dの機構によりSQLやシェルスクリプトなどが適用されてた後に実際のユニットテストが実行される。
