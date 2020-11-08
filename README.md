@@ -77,7 +77,7 @@ def is_database_ready(docker_ip):
 
 上記をで0.1秒周期で30秒タイムアウトで待つ。
 
-```
+```python
 @pytest.fixture(scope="session")
 def database_service(docker_ip, docker_services):
     docker_services.wait_until_responsive(
