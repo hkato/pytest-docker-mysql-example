@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "sample"
+version = "0.1.0"
+description = "Sample for pytest-docker and SQLAlchemy + MySQL/PostgreSQL"
+authors = ["Hideyuki KATO <hideyuki@kato.jp>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+SQLAlchemy = "^1.3.20"
+PyMySQL = "^0.10.1"
+psycopg2-binary = "^2.8.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-cov = "^2.10.1"
+pytest-docker = "^0.10.1"
+pytest-dotenv = "^0.5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
