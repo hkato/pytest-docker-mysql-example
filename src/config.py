@@ -1,7 +1,5 @@
 import os
 
-from sqlalchemy import create_engine
-
 DB_ENV = {
     'mysql': {
         'user': 'MYSQL_USER',
@@ -20,7 +18,7 @@ DB_ENV = {
 
 class Config:
     @classmethod
-    def get_engine(self):
+    def get_database_url(self):
         # 環境変数の *_USER でどのデータベースか切り替え値を切り替えとく
         if os.getenv('MYSQL_USER'):
             dialect, driver = 'mysql', 'pymysql'
@@ -37,8 +35,4 @@ class Config:
             os.getenv(DB_ENV[dialect]['database'])
         )
 
-        print(url)
-
-        engine = create_engine(url)
-        print(engine)
-        return engine
+        return url
