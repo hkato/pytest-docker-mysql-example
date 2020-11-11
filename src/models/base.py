@@ -1,13 +1,14 @@
-from config import Config
+from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
+from config import Config
 
 session = scoped_session(
     sessionmaker(
         autocommit=False,
         autoflush=True,
-        bind=Config.get_engine()
+        bind=create_engine(Config.get_database_url())
     )
 )
 

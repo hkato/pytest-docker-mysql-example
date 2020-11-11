@@ -1,7 +1,9 @@
 CREATE TABLE IF NOT EXISTS users
 (
   id SERIAL NOT NULL,
-  name VARCHAR(128),
+  name VARCHAR(50),
+  fullname VARCHAR(50),
+  nickname VARCHAR(50),
   PRIMARY KEY (id)
 );
 
@@ -9,5 +11,7 @@ CREATE TABLE IF NOT EXISTS users
 -- テストデータ
 -- 実際はシェルスクリプトでCSVをCOPY FROMすると吉
 --
-INSERT INTO users (id, name) VALUES (1, 'Yamada Taro');
-INSERT INTO users (id, name) VALUES (2, 'Hanako Sato');
+INSERT INTO users (id, name, fullname, nickname) VALUES (1, 'ed', 'Ed Jones', 'edsnickname');
+INSERT INTO users (id, name, fullname, nickname) VALUES (2, 'wendy', 'Wendy Williams', 'windy');
+INSERT INTO users (id, name, fullname, nickname) VALUES (3, 'mary', 'Mary Contrary', 'mary');
+INSERT INTO users (id, name, fullname, nickname) VALUES (4, 'fred', 'Fred Flintstone', 'freddy');
