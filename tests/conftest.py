@@ -1,14 +1,8 @@
 import os
-import sys
 
 import pytest
 
-# src/にパスを通し テストコード側は、
-# from src.foo import bar でなく from app import bar で良くする
-sys.path.append(os.path.abspath(os.path.dirname(
-    os.path.abspath(__file__)) + "/../src/"))
-
-from models.base import session
+from myapp.models.base import session
 
 
 def is_database_ready(docker_ip):
